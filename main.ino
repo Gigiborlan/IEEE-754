@@ -1,28 +1,3 @@
-//OLD WAY
-/* union FloatingPointIEEE754 {
-  struct {
-    unsigned int m2: 16;
-    unsigned int m1: 7;
-    unsigned int e: 8;
-    unsigned int s: 1;
-  } raw;
-  float f;
-} ieee754;
-*/
-/*  Serial.println("Decimal");
-  Serial.println(ieee754.f);
-  Serial.println("IEEE 754");
-  Serial.print(ieee754.raw.s);
-  Serial.println("   Sinal    1 bit");
-  Serial.print(ieee754.raw.e);
-  Serial.println(" Expoente 8 bits");
-  Serial.print(ieee754.raw.m1);
-  Serial.println("  Mantissa 7 bits");
-  Serial.print(ieee754.raw.m2);
-  Serial.println("   Mantissa 16 bits"); */
-//OLD WAY
-
-///////////////////////////STARTS HERE//////////////////////////////////
 #include <ModbusRTUSlave.h>
 
 ModbusRTUSlave rtu(1, &Serial);
