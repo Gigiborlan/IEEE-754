@@ -10,7 +10,6 @@ union FloatingPointIEEE754 {
   float f;
 } ieee754;
 
-//int address = 0;
 u8 is_me;
 
 u16 _D[100];
@@ -28,7 +27,6 @@ void setup() {
 }
 
 void loop() {
-//USING MODBUS
   rtu.process();  
   is_me = _M[1];
   //In QModMaster, there is a problem with address 1000, so we just use the second position of the byte _M and configure the software to write starting on Adress 1009
@@ -41,20 +39,6 @@ void loop() {
   }  
   else
     digitalWrite( 3 , LOW);
-  
-//USING SERIAL
-//  if( Serial.available() ){
-//    address = Serial.read();
-//  }  
-//  if( address == 4+48 ){
-//    ieee754.f = map(analogRead(A0), 0., 1023., 0., 5.);
-//    Serial.println("Decimal");
-//    Serial.println(ieee754.f,5);
-//    Serial.println("IEEE 754");
-//    Serial.println(ieee754.raw.m1,HEX);
-//    Serial.println(ieee754.raw.m2,HEX);
-//  }
-//  address = 0;  
 }
 
 float map(int x, double in_min, double in_max, double out_min, double out_max){
